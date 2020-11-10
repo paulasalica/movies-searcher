@@ -36,35 +36,24 @@ class Searcher extends Component {
                 </div>
 
                 <div className="options">
-                    <ul>
-                        <li>
-                            <input onChange={this.handleCheck} type="checkbox" checked={this.checked} className="option" name="movies" ></input>
-                            <label>Movies</label>
-                        </li>
-                        <li>
-                            <input onChange={this.handleCheck} type="checkbox" checked={this.checked} className="option" name="series" ></input>
-                            <label>Series</label>
-                        </li>
-                        <li>
-                            <input onChange={this.handleCheck} type="checkbox" checked={this.checked} className="option" name="episodes" ></input>
-                            <label>Episodes</label>
-                        </li>
-                        <li>
-                            <input onChange={this.handleCheck} type="checkbox" checked={this.checked} className="option" name="year" ></input>
-                            <label>Year</label>
-                        </li>
-
-                        {/* {
-                            this.state.options.map((option, index) => {
-                                return (<Checkbox key={index} handleCheck={this.handleCheck} {...option} />)
-                            })
-                        } */}
-                    </ul>
+                    <div className="option">
+                        <input onChange={this.handleCheck} type="checkbox" checked={this.checked} name="movies" ></input>
+                        <label>Movies</label>
+                    </div>
+                    <div className="option">
+                        <input onChange={this.handleCheck} type="checkbox" checked={this.checked} name="series" ></input>
+                        <label>Series</label>
+                    </div>
+                    <div className="option">
+                        <input onChange={this.handleCheck} type="checkbox" checked={this.checked} name="episodes" ></input>
+                        <label>Episodes</label>
+                    </div>
+                    <div className="option">
+                        <input onChange={this.handleCheck} type="checkbox" checked={this.checked} name="year" ></input>
+                        <label>Year</label>
+                    </div>
                 </div>
-
             </div>
-            
-
         )
     };
 }
