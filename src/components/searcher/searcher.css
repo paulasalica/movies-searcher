@@ -1,0 +1,42 @@
+.searcher, .options {
+    text-align: center;
+}
+
+.input-search {
+    height: 35px;
+    width: 600px;
+    background-color: rgb(23, 33, 43);
+    border: 1px solid rgb(10, 16, 20);
+    border-radius: 10px;
+    color: #fff;
+    padding-left: 10px;
+    font-size: 17px;
+    margin: 100px 0 35px;
+}
+
+.input-search::placeholder {
+    color: rgb(133, 133, 133);
+}
+
+.input-search:focus {
+    outline: none;
+}
+
+ul, li {
+    list-style: none;
+    display: inline;
+}
+
+.option {
+    margin: 50px 40px;
+}
+
+.searcher::after {
+    display: block;
+    height: 2px;
+    background-color: #10d5ff;
+    content: " ";
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 30px;
+}

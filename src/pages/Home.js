@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar';
-import Searcher from '../components/Searcher';
+import Searcher from '../components/searcher/Searcher';
 
 const SEARCH_API = "http://omdbapi.com/?apikey=db9d0705&t=pokemon";
 
