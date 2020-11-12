@@ -6,10 +6,10 @@ class Searcher extends Component {
         super(props)
         this.state = {
             options: [
-                {id:1, name: "movies", checked: false},
-                {id:2, name: "series", checked: false},
-                {id:3, name: "episodes", checked: false},
-                {id:4, name: "year", checked: false}
+                {name: "movies", checked: false},
+                {name: "series", checked: false},
+                {name: "episodes", checked: false},
+                {name: "year", checked: false}
             ]
         }
     }
@@ -28,13 +28,14 @@ class Searcher extends Component {
     }
 
     render() {
+        const {movies} = this.props;
+        console.log(movies);
 
         return (
             <div className="searcher">
                 <div className="search">
-                    <input type="text" name="search" className="input-search" placeholder="Search"></input>
+                    <input type="text" name="search" className="input-search" placeholder="Search" value={searchTerm} onChange={handleOnChange}></input>
                 </div>
-
                 <div className="options">
                     <div className="option">
                         <input onChange={this.handleCheck} type="checkbox" checked={this.checked} name="movies" ></input>
@@ -52,6 +53,9 @@ class Searcher extends Component {
                         <input onChange={this.handleCheck} type="checkbox" checked={this.checked} name="year" ></input>
                         <label>Year</label>
                     </div>
+                </div>
+                <div className="results">
+                    <p className="text">No results found yet</p>
                 </div>
             </div>
         )

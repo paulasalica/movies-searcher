@@ -32,12 +32,12 @@
     margin: 0 5px 0 0;
 }
 
-.searcher::after {
+.options::after {
     display: block;
     height: 2px;
     background-color: #10d5ff;
     content: " ";
-    width: 900px;
-    margin: 0 auto;
-    margin-top: 45px;
+    width: 80%;
+    margin: 50px auto;
 }
+
