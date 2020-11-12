@@ -39,6 +39,7 @@ function Home() {
         <React.Fragment>
             <Navbar/>
             <Searcher movies={movies} searchTerm={searchTerm} onChange={handleOnChange}/>
+            
         </React.Fragment>
         
     );
