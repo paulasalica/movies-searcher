@@ -7,7 +7,7 @@ const SEARCH_API = "http://omdbapi.com/?apikey=db9d0705&t=";
 
 function Home() {
     const [movies, setMovies] = useState([]);
-    const [searchTerm, setSearchTerm] = useState([]);
+    // const [searchTerm, setSearchTerm] = useState([]);
 
     useEffect(() => {
         fetch(SEARCH_API)
@@ -18,27 +18,23 @@ function Home() {
             });
     }, []);
 
-    const handleOnSubmit = (e) => {
-        e.preventDefault();
+    const handleOnSubmit = (value) => {
+        // value.preventDefault();
 
-        fetch(SEARCH_API + searchTerm)
+        fetch(SEARCH_API + value)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
                 setMovies(data.results);
             });
+        console.log(movies);
+        console.log()
     };
 
-    const handleOnChange = (e) => {
-        setSearchTerm(e.target.value);
-    }
-
     return (
-        // Navbar
-        // Searcher (search - movies/series)
         <React.Fragment>
             <Navbar/>
-            <Searcher movies={movies} searchTerm={searchTerm} onChange={handleOnChange}/>
+            <Searcher movies={movies} handleOnSubmit={handleOnSubmit}/>
             
         </React.Fragment>
         
