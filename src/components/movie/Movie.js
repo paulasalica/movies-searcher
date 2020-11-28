@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Movie = ({movie}) => {
-    const {title, poster} = movie;
-    console.log(poster);
+    console.log(movie);
+    const {Title, Poster, imdbRating} = movie;
+    console.log(Poster);
     return (
         <div className="movie">
-            this is a movie component    
-            <img src={poster} alt={title}></img>
+            <img src={Poster} alt={Title}></img>
+            <div className="movie-info">
+                <h3>{Title}</h3>
+                <span>{imdbRating}</span>
+            </div>
         </div>
     );
 };

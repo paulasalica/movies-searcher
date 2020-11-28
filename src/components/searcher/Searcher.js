@@ -31,12 +31,12 @@ export const Searcher = ({
 
     const handleOnClick = () => {
         handleOnSubmit(searchKey);
-        console.log(searchKey);
+        // console.log(searchKey);
     }
 
     const handleOnChange = (e) => {
         setSearchKey(e.target.value);
-        console.log(searchKey);
+        // console.log(searchKey);
     }
 
     return (
