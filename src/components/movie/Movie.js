@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './movie.css';
 
 const Movie = ({movie}) => {
     console.log(movie);
@@ -10,7 +11,6 @@ const Movie = ({movie}) => {
             <img src={Poster} alt={Title}></img>
             <div className="movie-info">
                 <h3>{Title}</h3>
-                <span>{imdbRating}</span>
             </div>
         </div>
     );

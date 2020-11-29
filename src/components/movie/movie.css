@@ -1,0 +1,13 @@
+.movie {
+    margin: 25px;
+    width: 300px;
+}
+
+.movie img {
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+.movie-info h3 {
+   margin: 0;
+}

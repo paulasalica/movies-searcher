@@ -3,7 +3,7 @@ import Navbar from '../components/navbar/Navbar';
 import Searcher from '../components/searcher/Searcher';
 import Movie from '../components/movie/Movie';
 
-const SEARCH_API = "http://omdbapi.com/?apikey=db9d0705&t=";
+const SEARCH_API = "http://omdbapi.com/?apikey=db9d0705";
 
 function Home() {
     const [movies, setMovies] = useState([]);
@@ -19,7 +19,8 @@ function Home() {
 
     const handleOnSubmit = async (value) => {
         // value.preventDefault();
-
+    
+        console.log(value);
         fetch(SEARCH_API + value)
             .then((res) => res.json())
             .then((data) => {
@@ -33,7 +34,7 @@ function Home() {
     return (
         <React.Fragment>
             <Navbar/>
-            <Searcher movies={movies} handleOnSubmit={handleOnSubmit}/>
+            <Searcher handleOnSubmit={handleOnSubmit}/>
             <Movie movie={movies}/>
         </React.Fragment>
         

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './searcher.css';
 
 export const Searcher = ({
-    movies,
     handleOnSubmit
 }) => {
     const [searchKey, setSearchKey] = useState();
@@ -30,8 +29,17 @@ export const Searcher = ({
     }
 
     const handleOnClick = () => {
-        handleOnSubmit(searchKey);
-        // console.log(searchKey);
+        let key = "&t=" + searchKey;
+
+        if(searchMovies[1]) {
+            key = key + "&type=movie";
+        }
+        if(searchSeries[1]) {
+            key = key + "&type=series";
+        }
+        console.log(key);
+        handleOnSubmit(key);
+        
     }
 
     const handleOnChange = (e) => {
@@ -39,6 +47,7 @@ export const Searcher = ({
         // console.log(searchKey);
     }
 
+    // console.log(searchMovies, searchYear);
     return (
         <div className="searcher">
             <div className="search">
