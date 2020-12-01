@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './searcher.css';
 
 export const Searcher = ({
+    movies,
     handleOnSubmit
 }) => {
     const [searchKey, setSearchKey] = useState();
@@ -37,7 +38,7 @@ export const Searcher = ({
         if(searchSeries[1]) {
             key = key + "&type=series";
         }
-        console.log(key);
+        // console.log(key);
         handleOnSubmit(key);
         
     }
@@ -52,7 +53,7 @@ export const Searcher = ({
         <div className="searcher">
             <div className="search">
                 <input type="text" name="search" className="input-search" placeholder="Search" value={searchKey} onChange={handleOnChange} ></input>
-                <i class="fas fa-search" onClick={handleOnClick}></i>
+                <i className="fas fa-search" onClick={handleOnClick}></i>
             </div>
             <div className="options">
                 <div className="option">
@@ -72,11 +73,10 @@ export const Searcher = ({
                     <label>Year</label>
                 </div>
             </div>
-            <div className="results">
+            {/* <div className="result">
                 <p className="text">No results found yet</p>
-            </div>
+            </div> */}
         </div>
-        
     )};
     
 
