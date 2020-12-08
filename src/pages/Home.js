@@ -23,7 +23,7 @@ function Home() {
         fetch(SEARCH_API + value)
             .then((res) => res.json())
             .then((data) => {
-                // console.log(data);
+                // console.log(data.value);
                 setMovies(data);
             });
 
