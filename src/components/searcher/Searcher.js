@@ -30,7 +30,7 @@ export const Searcher = ({
     }
 
     const handleOnClick = () => {
-        let key = "&t=" + searchKey;
+        let key = "&s=" + searchKey;
 
         if(searchMovies[1]) {
             key = key + "&type=movie";

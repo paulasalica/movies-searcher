@@ -7,14 +7,10 @@ import SingleMovie from './pages/SingleMovie'
 
 ReactDOM.render(
     <Router>
-        <Switch>
-            <Route path="/">
-                <Home/>
-            </Route>
-            <Route path="/movies/:id" component={<SingleMovie/>} >
-                
-            </Route>
-        </Switch>
+        <Route path="/" component={Home}/>
+        <Route path="/movies/:id" >  
+            <SingleMovie/>
+        </Route> 
     </Router>,
     document.getElementById('root')
 );

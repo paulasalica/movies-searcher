@@ -1,6 +1,12 @@
+.movies {
+    position: absolute;
+}
+
 .movie {
     margin: 50px;
     width: 300px;
+    height: 530px;
+    overflow: hidden;
 }
 
 .movie img {
@@ -8,8 +14,12 @@
     margin-bottom: 6px;
 }
 
-.movie-info h3 {
-   margin: 0 5px;
+.titleActive {
+    margin: 0 5px;
+}
+
+.titleInactive {
+    display: none;
 }
 
 .error {
@@ -17,13 +27,104 @@
     font-size: 20px;
 }
 
-.details {
-    width: 20px;
-    color: #fff;
-    text-decoration: none;
-    margin-left: 3px;
+.movie-info {
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    letter-spacing: 0.5px;
 }
 
-.details:hover {
-    color: #10d5ff;
+.detailsActive {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 15px 15px;
+    letter-spacing: 0.5px;
 }
+
+.detailsActive:hover {
+    text-decoration: underline;
+    text-decoration-color: #10d5ff;
+}
+
+.detailsInactive {
+    display: none;
+}
+
+.section-details {
+    margin-top: 30px;
+}
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center
+}
+
+.imageActive {
+    width: 100%;
+    height: 430px;
+}
+
+.imageInactive {
+    display: none;
+}
+
+.movieInactive {
+    display: none;
+}
+
+/* .section-details {
+    position: absolute;
+} */
+
+.section-details {
+    position: absolute;
+    width: 100%;
+    margin: 20px;
+}
+
+.data-left .titleMovie {
+    font-size: 40px;
+}
+
+.data-left img{
+    position: absolute;
+    width: 400px;
+    margin-left: 100px;
+}
+
+.section-details h3{
+    margin: 10px 0 0 10px;
+}
+
+.data {
+    height: 700px;
+    width: 50%;
+    margin-left: 750px;
+}
+
+.data div{
+    margin-bottom: 40px;
+}
+
+.plot p {
+    width: 650px;
+    margin-left: 40px;
+}
+
+.movie-info{
+    display:block;
+}
+
+.info {
+    width: 650px;
+}
+
+.info li {
+    list-style: none;
+}
+

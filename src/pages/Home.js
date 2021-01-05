@@ -7,6 +7,7 @@ const SEARCH_API = "http://omdbapi.com/?apikey=db9d0705";
 
 function Home() {
     const [movies, setMovies] = useState([]);
+    const [dataMovie, setDataMovie] = useState([]);
    
     useEffect(() => {
         fetch(SEARCH_API)
@@ -19,22 +20,30 @@ function Home() {
     const handleOnSubmit = async (value) => {
         // value.preventDefault();
     
-        // console.log(value);
         fetch(SEARCH_API + value)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data.value);
                 setMovies(data);
             });
-
     };
 
+    async function getDataMovie(value) {
+        console.log(SEARCH_API +  value);
+        fetch(SEARCH_API +  value)
+            .then((response) => {return response.json()})
+            .then((data) => {
+                console.log(data);
+                setDataMovie(data);
+            });
+        console.log(dataMovie);
+    };
     console.log(movies);
     return (
         <React.Fragment>
             <Navbar/>
             <Searcher movies={movies} handleOnSubmit={handleOnSubmit}/>
-            <Movie movies={movies}/>
+            <Movie movies={movies} data={dataMovie} handleOnSubmit={handleOnSubmit}/>
         </React.Fragment>
         
     );
