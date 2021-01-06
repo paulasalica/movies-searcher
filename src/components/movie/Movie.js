@@ -31,12 +31,6 @@ export const Movie = (
         classButton = 'detailsInactive';
     }
 
-    if(movieDetails) {
-        <div className="hola">
-            holaaa
-        </div>
-    }
-
     const handleClick = (movie) => {
         setDetails(!details);
         setMovieDestails(movie);
@@ -66,11 +60,15 @@ export const Movie = (
                                 Details
                             </a>
                         </div>
-        
-                        {details && movie==movieDetails? (
+                    </div>
+                )}
+                        {details && movieDetails? (
                             <div className="section-details">
                                 <div className="data-left">
-                                    <h3 className="titleMovie">{movie.Title}</h3>
+                                    <a className="backbutton" onClick={() => setDetails(!details)}>
+                                        Back
+                                    </a>
+                                    <h3 className="titleMovie">{data.Title}</h3>
                                     <img src={data.Poster}></img>
                                 </div>
                                 <div className="data">
@@ -94,9 +92,6 @@ export const Movie = (
                                                 <li><p>Website: {data.Website}</p></li>
                                         </ul>
                                     </div>
-                                    <div className="ratings">
-
-                                    </div>
                                 </div>
                              
                                 
@@ -104,8 +99,8 @@ export const Movie = (
                         ) : (
                             <div></div>
                         )}
-                    </div>
-                )}               
+                    
+                               
             </div>
         );
     } else {

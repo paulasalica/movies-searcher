@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import './searcher.css';
 
-export const Searcher = ({
-    movies,
-    handleOnSubmit
-}) => {
+export const Searcher = ({ handleOnSubmit }) => {
     const [searchKey, setSearchKey] = useState();
     const [searchMovies, setSearchMovies] = useState(["movies", false]);
     const [searchSeries, setSearchSeries] = useState(["series", false]);
@@ -45,10 +42,24 @@ export const Searcher = ({
 
     const handleOnChange = (e) => {
         setSearchKey(e.target.value);
-        // console.log(searchKey);
     }
 
-    // console.log(searchMovies, searchYear);
+    function uncheck() {
+        var checkboxMovies = document.getElementsByName("movies");
+        var checkboxSeries = document.getElementsByName("series");
+
+        checkboxMovies.onClick = function() {
+            if(checkboxMovies.checked != false) {
+                checkboxSeries.checked = false;
+            }
+        }
+        checkboxSeries.onClick = function() {
+            if(checkboxSeries.checked != false) {
+                checkboxMovies.checked = false;
+            }
+        }
+    }
+
     return (
         <div className="searcher">
             <div className="search">
@@ -64,18 +75,7 @@ export const Searcher = ({
                     <input onChange={handleCheck} type="checkbox"  name="series" checked={searchSeries[1]}></input>
                     <label>Series</label>
                 </div>
-                <div className="option">
-                    <input onChange={handleCheck} type="checkbox" name="episodes" checked={searchEpisodes[1]}></input>
-                    <label>Episodes</label>
-                </div>
-                <div className="option">
-                    <input onChange={handleCheck} type="checkbox" name="year" checked={searchYear[1]}></input>
-                    <label>Year</label>
-                </div>
             </div>
-            {/* <div className="result">
-                <p className="text">No results found yet</p>
-            </div> */}
         </div>
     )};
     
